@@ -1,0 +1,36 @@
+{% extends './template.html' %}
+
+{% block content %}
+
+<div class="w-100 text-center py-5">
+    <a class="" style="font-size: 30px; color: red" href="">Пользователь </a>
+    <span class="" style="font-size: 30px; color: red">Форма сотрудника</span>
+    <hr>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+<div class="border shadow m-2" style="width: 48%">
+    <div id="accordion" role="tablist" aria-multiselectable="true">
+            {% for type in response_type %}
+          <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Заявка номер {{type.id}}
+                </a>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+              <div class="card-block">
+                <p>{{type.secondname}}</p>
+                <p>{{type.firstname}}<</p>
+                <p>{{type.patronymic}}<</p>
+                <p>{{type.address}}</p>
+                <p>{{type.type}}<</p>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}

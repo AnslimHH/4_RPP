@@ -1,0 +1,59 @@
+{% extends './template.html' %}
+
+{% block content %}
+
+<div class="w-100 text-center py-5">
+    <span class="" style="font-size: 30px; color: red">Форма заявки </span>
+    <a class="" style="font-size: 30px; color: red" href="employee/">Сотрудник</a>
+    <hr>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="border shadow m-2" style="width: 48%">
+        <div class="row h-100 justify-content-center align-items-center p-2">
+        <div class="col-md-8 order-md-1">
+          <form class="needs-validation" method="POST">
+              {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="secondname">Фамилия</label>
+                <input type="text" class="form-control" id="secondname" name="secondname" placeholder="Иванов" value="" required>
+                <div class="invalid-feedback">
+                  Введите фамилию
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="firstname">Имя</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Иван" value="" required>
+                <div class="invalid-feedback">
+                  Введите имя
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="patronymic">Отчетсво <span class="text-muted">(При наличии)</span></label>
+              <input type="text" class="form-control" id="patronymic" name="patronymic" placeholder="Иванович">
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Адрес</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Ленина 10 80" required>
+              <div class="invalid-feedback">
+                  Укажите адрес
+              </div>
+            </div>
+              <div class="mb-3">
+              <label for="type">Причина</label>
+              <input type="text" class="form-control" id="type" name="type"placeholder="Причина" required>
+              <div class="invalid-feedback">
+                  Укажите причину вызова
+              </div>
+            </div>
+              <div class="row h-100 justify-content-center align-items-center">
+                  <button class="btn btn-primary btn-lg btn-block " type="submit">Отправить</button>
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
